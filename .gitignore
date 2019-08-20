@@ -9,3 +9,8 @@ _minted-slides/
 *.snm
 *.toc
 *.vrb
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.synctex.gz

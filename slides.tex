@@ -1,16 +1,23 @@
 \documentclass{beamer} % beamer is the document class for presentation slides
 
 \usepackage{hyperref} % commands such as \href, \url, etc.
-\usepackage[french]{babel} % load typography rules for the french language
+\usepackage[english,french]{babel} % load typography rules for the french language
 \usepackage{biblatex} % bibliography handling
 \usepackage{csquotes} % biblatex extensions for non-english languages
+\usepackage{tipa} % International Phonetic Alphabet symbols and helpers
 
 \usetheme{Warsaw}
 \useoutertheme{infolines} % Display the slides number in the footline (and a smaller header)
 
 % Add a tableofcontent slide before each subsection, highlighting the section we're at
-\AtBeginSubsection{
-    \frame{\tableofcontents[currentsubsection]}
+\AtBeginSection[]{
+    \frame{\tableofcontents[currentsection]}
+}
+
+% define the \ipa command that switches to english typography rules before
+% calling \textipa (which gets confused by french typography rules)
+\newcommand{\ipa}[1] {
+    \foreignlanguage{english}{\textipa{#1}}
 }
 
 % Bibliography configuration
@@ -39,6 +46,30 @@
 \begin{document}
 \frame{\titlepage{}}
 
+\section{Introduction}
+\subsection{\TeX}
+\begin{frame}{\TeX}
+    \begin{description}
+        \item[Objectif :] mise en forme typographique entièrement informatique
+        \item[Création :] Donald Knuth, 1977-1989
+        \item[Prononciation :] \ipa{[tEx]} (symbolise les lettres $\tau\varepsilon\chi$)
+    \end{description}
+
+    \begin{figure}[position]
+        \includegraphics[height=0.5\textheight]{img/knuth}
+        \caption{Donald Knuth, en 2005}
+    \end{figure}
+\end{frame}
+
+\subsection{\LaTeX}
+\begin{frame}{\LaTeX}
+    \begin{description}
+        \item[Prononciation :] \ipa{["lA:tEx]} ou \ipa{["leI:tEx]}
+    \end{description}
+\end{frame}
+
+\section{Conclusion}
+\subsection{Bibliography}
 \begin{frame}[allowframebreaks]{Bibliographie}
     \printbibliography{}
 \end{frame}
