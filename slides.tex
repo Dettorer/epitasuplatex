@@ -1,0 +1,45 @@
+\documentclass{beamer} % beamer is the document class for presentation slides
+
+\usepackage{hyperref} % commands such as \href, \url, etc.
+\usepackage[french]{babel} % load typography rules for the french language
+\usepackage{biblatex} % bibliography handling
+\usepackage{csquotes} % biblatex extensions for non-english languages
+
+\usetheme{Warsaw}
+\useoutertheme{infolines} % Display the slides number in the footline (and a smaller header)
+
+% Add a tableofcontent slide before each subsection, highlighting the section we're at
+\AtBeginSubsection{
+    \frame{\tableofcontents[currentsubsection]}
+}
+
+% Bibliography configuration
+\bibliography{references}
+
+\title{Écriture de documents avec \LaTeX{}}
+\subtitle{\texorpdfstring{\small{\emph{D'après une conférence de Didier Verna}\cite{latexDV}}}
+                         {D'après une conférence de Didier Verna}}
+\institute{EPITA}
+\author{
+    % The authors information appear in the first page of the document but also
+    % in the pdf's metadata. A lot of stuff isn't allowed in the metadata
+    % (links, line breaks, etc.) so we must define two alternatives, one for the
+    % document page and one for the metadata, this is done with the
+    % \texordpdfstring command
+    \texorpdfstring
+    { % Nicely formatted author information
+        Paul Hervot\\
+        \href{mailto:paul.hervot@epita.fr}{\nolinkurl{paul.hervot@epita.fr}}
+    }{ % A simpler version for the pdf's metadata
+        Paul Hervot
+    }
+}
+\date{3 septembre 2019}
+
+\begin{document}
+\frame{\titlepage{}}
+
+\begin{frame}[allowframebreaks]{Bibliographie}
+    \printbibliography{}
+\end{frame}
+\end{document}
