@@ -2,9 +2,11 @@
 
 \usepackage{hyperref} % commands such as \href, \url, etc.
 \usepackage[english,french]{babel} % load typography rules for the french language
-\usepackage{biblatex} % bibliography handling
+\usepackage[backref=true]{biblatex} % bibliography handling
 \usepackage{csquotes} % biblatex extensions for non-english languages
 \usepackage{tipa} % International Phonetic Alphabet symbols and helpers
+\usepackage{caption} % more control over captions
+\usepackage{ccicons} % icons for Creative-Commons licenses
 
 \usetheme{Warsaw}
 \useoutertheme{infolines} % Display the slides number in the footline (and a smaller header)
@@ -57,7 +59,7 @@
 
     \begin{figure}[position]
         \includegraphics[height=0.5\textheight]{img/knuth}
-        \caption{Donald Knuth, en 2005}
+        \caption*{Donald Knuth, en 2005\cite{knuthpic}}
     \end{figure}
 \end{frame}
 
@@ -69,7 +71,7 @@
 \end{frame}
 
 \section{Conclusion}
-\subsection{Bibliography}
+\subsection{Références}
 \begin{frame}[allowframebreaks]{Bibliographie}
     \printbibliography{}
 \end{frame}
