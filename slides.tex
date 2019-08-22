@@ -15,7 +15,13 @@
     urlcolor=Brown
 }
 
+% bibliography configuration
 \usepackage[backref=true]{biblatex} % bibliography handling
+\newcommand{\titlecite}[1] {
+    % Insert the (short) title of the citation, and a reference to it
+    \citetitle{#1}\cite{#1}
+}
+
 \usepackage{csquotes} % biblatex extensions for non-english languages
 \usepackage{tipa} % International Phonetic Alphabet symbols and helpers
 \usepackage{caption} % more control over captions
@@ -95,7 +101,30 @@
 \end{frame}
 
 \section{Conclusion}
-\subsection{Références}
+\subsection{Autres ressources et références}
+\begin{frame}{Autre documentation}
+    \begin{description}
+        \item[Livres]{
+            \begin{itemize}
+                \item \titlecite{lamport1994latex}
+                \item \titlecite{goossens1997latex}
+                \item \titlecite{rolland1999latex}
+            \end{itemize}
+        }
+        \item[En ligne]{
+            \begin{itemize}
+                \item \titlecite{oetiker2011not}
+                \item \url{http://www.latex-project.org}
+                \item \url{http://www.ctan.org} (le "\textenglish{Comprehensive
+                    \TeX{} Archive Network}", documentation complète de toutes
+                    les extensions)
+                \item \url{https://tex.stackexchange.com} (forum de
+                    question/réponses)
+                \item \url{https://en.wikibooks.org/wiki/LaTeX}
+            \end{itemize}
+        }
+    \end{description}
+\end{frame}
 \begin{frame}[allowframebreaks]{Bibliographie}
     \printbibliography{}
 \end{frame}
