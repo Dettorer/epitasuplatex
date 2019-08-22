@@ -1,4 +1,4 @@
-\documentclass{beamer} % beamer is the document class for presentation slides
+\documentclass[usenames,dvipsnames]{beamer} % beamer is the document class for presentation slides
 
 % languages typesetting rules
 \usepackage{polyglossia} % handle multiple languages typesetting rules
@@ -7,7 +7,14 @@
 \newfontfamily\greekfont[Script=Greek]{Linux Libertine O} % we need a special font for greek text
 \newfontfamily\greekfontsf[Script=Greek]{Linux Libertine O} % same, but sans serif
 
+% links configuration
 \usepackage{hyperref} % commands such as \href, \url, etc.
+\hypersetup{
+    colorlinks=true,
+    linkcolor=,
+    urlcolor=Brown
+}
+
 \usepackage[backref=true]{biblatex} % bibliography handling
 \usepackage{csquotes} % biblatex extensions for non-english languages
 \usepackage{tipa} % International Phonetic Alphabet symbols and helpers
