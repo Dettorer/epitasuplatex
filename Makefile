@@ -1,6 +1,6 @@
 SRC=slides
 
-$(SRC).pdf: $(SRC).tex Makefile references.bib
+$(SRC).pdf: $(SRC).tex Makefile references.bib $(wildcard examples/*) $(wildcard img/*)
 	latexmk
 
 .PHONY: slides

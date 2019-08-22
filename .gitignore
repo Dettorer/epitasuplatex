@@ -14,3 +14,4 @@ _minted-slides/
 *.blg
 *.run.xml
 *.synctex.gz
+*.listing

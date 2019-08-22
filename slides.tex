@@ -22,6 +22,31 @@
     \citetitle{#1}\cite{#1}
 }
 
+% Configuration to nicely display code examples
+\usepackage[skins,minted]{tcolorbox} % fancy colored boxes
+\tcbset{ % configure the boxes style
+    enhanced, % fancier boxes
+    overlay={%
+        % Add a small darker column to the left of the boxes to receive line numbers
+        \begin{tcbclipinterior}
+            \fill[gray!25] (frame.south west) rectangle ([xshift=4mm]frame.north west);
+        \end{tcbclipinterior}
+    }
+}
+\newmintedfile[texinput]{latex}{ % Shorthand for displaying latex code from file
+    linenos, % display line numbers
+    numbersep=2mm, % by default line numbers are too far on the left and leave the color box, make them closer
+    fontsize=\footnotesize, % make the code smaller
+    breaklines=true % break lines if they are too long
+}
+\newcommand{\texinputbox}[2]{
+    % Display latex code through minted inside a color box
+    \begin{tcolorbox}[title=#1,drop shadow]
+        \texinput{#2}
+    \end{tcolorbox}
+}
+\newmintinline[texinline]{latex}{} % Shorthand for \mintinline{latex}{…}
+
 \usepackage{csquotes} % biblatex extensions for non-english languages
 \usepackage{tipa} % International Phonetic Alphabet symbols and helpers
 \usepackage{caption} % more control over captions
@@ -127,6 +152,26 @@
     Intégré} comme \href{https://www.xm1math.net/texmaker/}{\TeX{}Maker} et des
     plugins pour éditeurs comme \href{https://github.com/lervag/vimtex}{vimtex}.
     \LaTeX{} étant libre, il existe un très grand nombre d'outils autour.
+\end{frame}
+
+\section{Principes fondamentaux}
+\begin{frame}[fragile]{Organisation de la source d'un document \LaTeX}
+    \texinputbox{article.tex}{examples/article-skeleton.tex}
+
+    Anatomie d'une commande : \texinline{\nom[options]{arguments}}
+\end{frame}
+
+\begin{frame}[fragile]{Subtilités syntaxiques}
+    \begin{itemize}
+        \item Plusieurs caractères blancs $\Leftrightarrow$ un seul caractère blanc ;
+        \item une ligne blanche $\Rightarrow$ changement de paragraphe ;
+        \item caractères spéciaux à "échapper" par un \textbackslash{} :\\
+            \texinline{\# \$ \% \^ \& \_ \{ \} \~}
+        \item sauf pour \textbackslash{} qui s'écrira
+            \texinline{\textbackslash{}} (car \texinline{\\}
+            signifie "nouvelle ligne") ;
+        \item commentaires : \texinline{\%} jusqu'à la fin de la ligne
+    \end{itemize}
 \end{frame}
 
 \section{Conclusion}
