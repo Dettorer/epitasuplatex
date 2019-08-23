@@ -26,6 +26,7 @@
 \usepackage[skins,minted]{tcolorbox} % fancy colored boxes
 \tcbset{ % configure the boxes style
     enhanced, % fancier boxes
+    drop shadow,
     overlay={%
         % Add a small darker column to the left of the boxes to receive line numbers
         \begin{tcbclipinterior}
@@ -41,11 +42,23 @@
 }
 \newcommand{\texinputbox}[2]{
     % Display latex code through minted inside a color box
-    \begin{tcolorbox}[title=#1,drop shadow]
+    \begin{tcolorbox}[title=#1]
+        \selectlanguage{english}
         \texinput{#2}
     \end{tcolorbox}
 }
-\newmintinline[texinline]{latex}{} % Shorthand for \mintinline{latex}{…}
+\definecolor{lightlightgray}{gray}{0.93}
+\newmintinline[texinline]{latex}{bgcolor=lightlightgray} % Shorthand for \mintinline{latex}{…}
+\newmintedfile[shellinput]{shell-session}{ % Shorthand for displaying shell sessions from file
+    fontsize=\footnotesize, % make the code smaller
+    breaklines=true, % break lines if they are too long
+}
+\newcommand{\shellinputbox}[2]{
+    % Display shell session through minted inside a color box
+    \begin{tcolorbox}[title=#1,overlay=]
+        \shellinput{#2}
+    \end{tcolorbox}
+}
 
 \usepackage{csquotes} % biblatex extensions for non-english languages
 \usepackage{tipa} % International Phonetic Alphabet symbols and helpers

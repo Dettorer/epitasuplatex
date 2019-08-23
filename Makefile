@@ -13,6 +13,6 @@ evince okular: %: $(SRC).pdf
 .PHONY: clean distclean
 clean:
 	latexmk -c
-	@rm -rvf *.nav *.snm *.vrb _minted-slides *.run.xml *.bbl
+	@rm -rvf *.nav *.snm *.vrb _minted-slides *.run.xml *.bbl *.listing *.fls
 distclean: clean
 	latexmk -C
