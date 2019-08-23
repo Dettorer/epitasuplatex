@@ -231,6 +231,81 @@
 
     Une meilleur gestion de l'unicode et des polices modernes.
 \end{frame}
+
+\section{Fonctionnalités du langage}
+\subsection{Configuration globale du document}
+\begin{frame}[fragile]{Les classes de document}
+    La classe d'un document est définiée par la commande:
+
+    \texinputbox{}{examples/documentclass-struct.tex}
+
+    \begin{description}
+        \item[Lettre :] \texinline{\documentclass[a4paper]{letter}}\\
+            \textrightarrow{} \texinline{\signature{…}}, \texinline{\address{…}},
+            etc…
+        \item[Article :] \texinline{\documentclass{article}} \vspace{-4pt}
+        \item[Rapport :] \texinline{\documentclass{report}} \vspace{-4pt}
+        \item[Livres :] \texinline{\documentclass{book}}\\
+            \textrightarrow{} \texinline{\title{…}}, \texinline{\author{…}}, etc…
+        \item[Présentations :] \texinline{\documentclass{beamer}}\\
+            \textrightarrow{} \texinline{\begin{frame}},
+                \texinline{\usetheme{…}}, etc…
+    \end{description}
+\end{frame}
+
+\begin{frame}[fragile]{Les paquets}
+    Ajoutent des fonctionnalités (surtout des commandes) disponibles. Ils sont
+    inclus avec:
+
+    \texinputbox{}{examples/usepackage-struct.tex}
+
+    \begin{description}
+        \item[Liens cliquables:]
+            \texinline{\usepackage[colorlinks=true]{hyperref}}\\
+            \textrightarrow{} \texinline{\href{…}{…}}, \texinline{\url{…}}, etc…
+        \item[Cadres colorés:] \texinline{\usepackage{tcolorbox}}\\
+            \textrightarrow{} \texinline{\begin{tcolorbox}},
+                \texinline{\tcbset{…}}, etc…
+        \item[Coloration syntaxique:] \texinline{\usepackage{minted}}\\
+            \textrightarrow{} \texinline{\begin{minted}{python}},
+            \texinline{\mintinline{ocaml}{…}}, etc…
+    \end{description}
+
+    Et \emph{beaucoup} d'autres.
+\end{frame}
+
+\begin{frame}[fragile]{Internationalisation (i18n)}
+    Avec le paquet Babel:
+    \texinputbox{}{examples/babel-fr.tex}
+
+    Enjeux:
+    \begin{itemize}
+        \item respect automatique des règles de typographie (espaces devant les
+        signes de ponctuation, césures, …);
+        \item localisation des textes automatiques ("Table des matières",
+        "Bibliographie", …);
+        \item encodage et jeu de caractères du fichier source (voir aussi
+        \texinline{\usepackage[utf8]{inputenc}}).
+    \end{itemize}
+
+    Il est aussi possible de gérer plusieurs langages dans un même document et
+    de passer de l'un à l'autre avec des commandes (voir aussi
+    \texinline{\usepackage{polyglossia}}).
+\end{frame}
+
+\begin{frame}[fragile]{Quelques élément typographiques}
+    \begin{columns}
+        \begin{column}{0.50\textwidth}
+            \texinputbox{exemple.tex}{examples/typo-examples.tex}
+        \end{column}
+
+        \begin{column}{0.50\textwidth}
+            \begin{tcolorbox}[title=exemple.pdf, overlay=]
+                \input{examples/typo-examples.tex}
+            \end{tcolorbox}
+        \end{column}
+    \end{columns}
+\end{frame}
 \section{Conclusion}
 \subsection{Autres ressources et références}
 \begin{frame}{Autre documentation}
