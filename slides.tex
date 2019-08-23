@@ -56,6 +56,7 @@
 \newcommand{\shellinputbox}[2]{
     % Display shell session through minted inside a color box
     \begin{tcolorbox}[title=#1,overlay=]
+        \selectlanguage{english}
         \shellinput{#2}
     \end{tcolorbox}
 }
@@ -155,7 +156,7 @@
 \begin{frame}{Obtenir \LaTeX}
     \begin{description}
         \item[Multi-plateforme :] \href{http://tug.org/texlive/}{\TeX{}Live}.
-            Standard \emph{de facto}, disponible dans toutes les destribution
+            Standard \emph{de facto}, disponible dans toutes les distribution
             Linux.
         \item[Windows :] \href{https://miktex.org/}{\hologo{MiKTeX}}.
         \item[MacOS :] \href{https://www.tug.org/mactex/}{Mac\TeX}, basé sur \TeX{}Live.
@@ -186,7 +187,7 @@
         \item sauf pour \textbackslash{} qui s'écrira
             \texinline{\textbackslash{}} (car \texinline{\\}
             signifie "nouvelle ligne") ;
-        \item commentaires : \texinline{\%} jusqu'à la fin de la ligne
+        \item commentaires : \texinline{%} jusqu'à la fin de la ligne
     \end{itemize}
 \end{frame}
 
@@ -243,8 +244,8 @@
         \item[Lettre :] \texinline{\documentclass[a4paper]{letter}}\\
             \textrightarrow{} \texinline{\signature{…}}, \texinline{\address{…}},
             etc…
-        \item[Article :] \texinline{\documentclass{article}} \vspace{-4pt}
-        \item[Rapport :] \texinline{\documentclass{report}} \vspace{-4pt}
+        \item[Article :] \texinline{\documentclass{article}} \vspace{-5pt}
+        \item[Rapport :] \texinline{\documentclass{report}} \vspace{-5pt}
         \item[Livres :] \texinline{\documentclass{book}}\\
             \textrightarrow{} \texinline{\title{…}}, \texinline{\author{…}}, etc…
         \item[Présentations :] \texinline{\documentclass{beamer}}\\
@@ -293,7 +294,7 @@
     \texinline{\usepackage{polyglossia}}).
 \end{frame}
 
-\begin{frame}[fragile]{Quelques élément typographiques}
+\begin{frame}[fragile]{Quelques éléments typographiques}
     \begin{columns}
         \begin{column}{0.50\textwidth}
             \texinputbox{exemple.tex}{examples/typo-examples.tex}
