@@ -307,6 +307,29 @@
         \end{column}
     \end{columns}
 \end{frame}
+
+\subsection{Table des matières}
+\begin{frame}[fragile]{Exemple de ToC}
+    \center
+    \texinline{\section{…}}, \texinline{\subsection{…}},
+    \texinline{\subsubsection{…}}
+
+    \textrightarrow{} \texinline{\tableofcontents{}}
+    \begin{tcolorbox}[title=Pour cette présentation, overlay=]
+        \footnotesize
+        \tableofcontents
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}[fragile]{Deux passes de compilation nécessaires}
+    \shellinputbox{Si \texttt{\textbackslash{}tableofcontents} est utilisé}
+                  {examples/session-toc.session}
+\end{frame}
+
+\begin{frame}[fragile]{latexmk}
+    \shellinputbox{Le plus simple est d'utiliser latexmk}
+                  {examples/session-toc-latexmk.session}
+\end{frame}
 \section{Conclusion}
 \subsection{Autres ressources et références}
 \begin{frame}{Autre documentation}
