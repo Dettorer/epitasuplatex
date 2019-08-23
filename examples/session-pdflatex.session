@@ -1,0 +1,9 @@
+[dettorer@ringil]$ ls
+article.tex
+[dettorer@ringil]$ pdflatex article.tex
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex)
+[…]
+Output written on article.pdf (1 page, 20622 bytes).
+Transcript written on article.log.
+[dettorer@ringil]$ ls
+article.aux  article.log  article.pdf  article.tex

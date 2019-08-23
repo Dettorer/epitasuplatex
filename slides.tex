@@ -170,6 +170,7 @@
 \end{frame}
 
 \section{Principes fondamentaux}
+\subsection{Le langage}
 \begin{frame}[fragile]{Organisation de la source d'un document \LaTeX}
     \texinputbox{article.tex}{examples/article-skeleton.tex}
 
@@ -189,6 +190,47 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Exemples}
+    \begin{columns}
+        \begin{column}{0.58\textwidth}
+            \texinputbox{exemple.tex}{examples/basics-syntax.tex}
+        \end{column}
+
+        \begin{column}{0.43\textwidth}
+            \begin{tcolorbox}[title=exemple.pdf, overlay=]
+                \input{examples/basics-syntax.tex}
+            \end{tcolorbox}
+        \end{column}
+    \end{columns}
+
+    \begin{columns}
+        \begin{column}{0.58\textwidth}
+            \begin{tcolorbox}[overlay=]
+                \footnotesize
+                \texinline[bgcolor=]{\^o, \c c, \c C, \oe, \` A, \" i}
+            \end{tcolorbox}
+        \end{column}
+
+        \begin{column}{0.43\textwidth}
+            \begin{tcolorbox}[overlay=]
+                \^o, \c c, \c C, \oe, \` A, \" i
+            \end{tcolorbox}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Compilation}
+\begin{frame}[fragile]{\hologo{pdfTeX}}
+    \shellinputbox{Avec l'outil \hologo{pdfLaTeX}}{examples/session-pdflatex.session}
+
+    Peut être l'outil le plus connu.
+\end{frame}
+
+\begin{frame}[fragile]{\hologo{XeTeX}}
+    \shellinputbox{Avec l'outil \hologo{XeLaTeX}}{examples/session-xelatex.session}
+
+    Une meilleur gestion de l'unicode et des polices modernes.
+\end{frame}
 \section{Conclusion}
 \subsection{Autres ressources et références}
 \begin{frame}{Autre documentation}
