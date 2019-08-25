@@ -60,6 +60,21 @@
         \shellinput{#2}
     \end{tcolorbox}
 }
+\newcommand{\texexample}[5]{
+    % Shorhand to display side by side a latex source file (minted) and its
+    % rendering
+    \begin{columns}
+        \begin{column}{#4}
+            \texinputbox{#2}{#1}
+        \end{column}
+
+        \begin{column}{#5}
+            \begin{tcolorbox}[title=#3, overlay=]
+                \input{#1}
+            \end{tcolorbox}
+        \end{column}
+    \end{columns}
+}
 
 \usepackage{csquotes} % biblatex extensions for non-english languages
 \usepackage{tipa} % International Phonetic Alphabet symbols and helpers
@@ -192,32 +207,13 @@
 \end{frame}
 
 \begin{frame}[fragile]{Exemples}
-    \begin{columns}
-        \begin{column}{0.58\textwidth}
-            \texinputbox{exemple.tex}{examples/basics-syntax.tex}
-        \end{column}
+    \texexample{examples/basics-syntax.tex}
+               {exemple.tex}{exemple.pdf}
+               {0.58\textwidth}{0.43\textwidth}
 
-        \begin{column}{0.43\textwidth}
-            \begin{tcolorbox}[title=exemple.pdf, overlay=]
-                \input{examples/basics-syntax.tex}
-            \end{tcolorbox}
-        \end{column}
-    \end{columns}
-
-    \begin{columns}
-        \begin{column}{0.58\textwidth}
-            \begin{tcolorbox}[overlay=]
-                \footnotesize
-                \texinline[bgcolor=]{\^o, \c c, \c C, \oe, \` A, \" i}
-            \end{tcolorbox}
-        \end{column}
-
-        \begin{column}{0.43\textwidth}
-            \begin{tcolorbox}[overlay=]
-                \^o, \c c, \c C, \oe, \` A, \" i
-            \end{tcolorbox}
-        \end{column}
-    \end{columns}
+    \texexample{examples/basics-syntax-bis.tex}
+               {}{}
+               {0.58\textwidth}{0.43\textwidth}
 \end{frame}
 
 \subsection{Compilation}
@@ -295,18 +291,11 @@
 \end{frame}
 
 \begin{frame}[fragile]{Quelques éléments typographiques}
-    \begin{columns}
-        \begin{column}{0.50\textwidth}
-            \texinputbox{exemple.tex}{examples/typo-examples.tex}
-        \end{column}
-
-        \begin{column}{0.50\textwidth}
-            \begin{tcolorbox}[title=exemple.pdf, overlay=]
-                \input{examples/typo-examples.tex}
-            \end{tcolorbox}
-        \end{column}
-    \end{columns}
+    \texexample{examples/typo-examples.tex}
+               {exemple.tex}{exemple.pdf}
+               {0.50\textwidth}{0.50\textwidth}
 \end{frame}
+
 
 \subsection{Table des matières}
 \begin{frame}[fragile]{Exemple de ToC}
