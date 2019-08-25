@@ -1,5 +1,9 @@
 \documentclass[usenames,dvipsnames]{beamer} % beamer is the document class for presentation slides
 
+% needed for some examples
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+
 % languages typesetting rules
 \usepackage{polyglossia} % handle multiple languages typesetting rules
 \setdefaultlanguage{french} % this presentation is in french
@@ -296,6 +300,14 @@
                {0.50\textwidth}{0.50\textwidth}
 \end{frame}
 
+\begin{frame}[fragile]{Exemple de typographie française}
+    \texexample{examples/typo-examples-fr.tex}
+               {exemple.tex}{exemple.pdf}
+               {0.50\textwidth}{0.50\textwidth}
+
+    Note: \texinline{\nombre} vient du paquet "\texttt{numprint}" avec l'option
+    "\texttt{autolanguage}" (\texinline{\usepackage[autolanguage]{numprint}}).
+\end{frame}
 
 \subsection{Table des matières}
 \begin{frame}[fragile]{Exemple de ToC}
