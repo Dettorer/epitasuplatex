@@ -89,6 +89,7 @@
 % Beamer theme configuration
 \usetheme{Warsaw}
 \useoutertheme{infolines} % Display the slides number in the footline (and a smaller header)
+\setbeamertemplate{caption}[numbered] % Show figure number when using `\caption` instead of `\caption*`
 
 % Add a tableofcontent slide before each subsection, highlighting the section we're at
 \AtBeginSection[]{
@@ -344,6 +345,22 @@
 \begin{frame}[fragile]{latexmk et \hologo{XeLaTeX}}
     \shellinputbox{La même chose avec \hologo{XeLaTeX}}
                   {examples/session-latexmk-xelatex.session}
+\end{frame}
+
+\section{Présentation de données}
+\subsection{Tableaux}
+\begin{frame}[fragile]{\texttt{tabular}}
+    \texexample{examples/tabular.tex}
+               {exemple.tex}{exemple.pdf}
+               {0.60\textwidth}{0.40\textwidth}
+\end{frame}
+\subsection{Graphiques}
+\begin{frame}[fragile]{Inclure des images}
+    \texinputbox{}{examples/includegraphics.tex}
+
+    \begin{tcolorbox}[overlay=]
+        \input{examples/includegraphics.tex}
+    \end{tcolorbox}
 \end{frame}
 \section{Conclusion}
 \subsection{Autres ressources et références}
