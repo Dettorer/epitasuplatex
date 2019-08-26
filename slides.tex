@@ -3,6 +3,8 @@
 % needed for some examples
 \usepackage[french]{babel}
 \usepackage[autolanguage]{numprint}
+\usepackage{amsmath} % even more advanced math
+\usepackage{esint} % more integral (math) symbols
 
 % languages typesetting rules
 \usepackage{polyglossia} % handle multiple languages typesetting rules
@@ -360,6 +362,29 @@
 
     \begin{tcolorbox}[overlay=]
         \input{examples/includegraphics.tex}
+    \end{tcolorbox}
+\end{frame}
+
+\subsection{Mathématiques}
+\begin{frame}[fragile]{Environnements mathématiques}
+    Conventions typographiques différentes $\Rightarrow$ mode spécifique:
+
+    \texinputbox{exemple.tex}{examples/math-simple.tex}
+
+    \begin{tcolorbox}[title=exemple.pdf, overlay=]
+        \input{examples/math-simple.tex}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}[fragile]{Un mode très complet}
+    On peut aller très loin, et encore plus avec le paquet "\texttt{asmmath}".
+
+    \begin{tcolorbox}[title=Théorème de Gauss appliqué au champ électrique, overlay=]
+        \input{examples/math-gauss.tex}
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[title=Exemple de suite de Dirac donné par Edmund Landau]
+        \input{examples/math-dirac.tex}
     \end{tcolorbox}
 \end{frame}
 \section{Conclusion}
