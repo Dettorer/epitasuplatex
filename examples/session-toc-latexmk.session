@@ -1,16 +1,15 @@
 [dettorer@ringil]$ ls
 article.tex
-[dettorer@ringil]$ latexmk -pdf article.tex
+[dettorer@ringil]$ latexmk -pdfxe article.tex
 Latexmk: This is Latexmk, […]
 ------------
-Run number 1 of rule 'pdflatex'
+Run number 1 of rule 'xelatex'
 ------------
 […] (Latexmk: Missing input file: 'article.toc')
 ------------
-Run number 2 of rule 'pdflatex'
+Run number 2 of rule 'xelatex'
 ------------
-[…]
 Latexmk: All targets () are up-to-date
 [dettorer@ringil]$ ls
 article.aux  article.fdb_latexmk  article.fls  article.log
-article.pdf  article.tex  article.toc
+article.pdf  article.tex  article.toc  article.xdv

@@ -1,14 +1,14 @@
 [dettorer@ringil]$ ls
 article.tex
-[dettorer@ringil]$ pdflatex article.tex
+[dettorer@ringil]$ xelatex article.tex
 […]
 No file article.toc.
 […]
 [dettorer@ringil]$ ls
 article.aux  article.log  article.pdf  article.tex  article.toc
-[dettorer@ringil]$ pdflatex article.tex
+[dettorer@ringil]$ xelatex article.tex
 […]
-(./article.toc) [1{/var/lib/texmf/[…]/pdftex.map}]
+(./article.toc)
 […]
 [dettorer@ringil]$ ls
 article.aux  article.log  article.pdf  article.tex  article.toc

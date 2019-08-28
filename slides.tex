@@ -224,22 +224,20 @@
 \end{frame}
 
 \subsection{Compilation}
-\begin{frame}[fragile]{\hologo{pdfTeX}}
-    \shellinputbox{Avec l'outil \hologo{pdfLaTeX}}{examples/session-pdflatex.session}
-
-    Peut être l'outil le plus connu.
-\end{frame}
-
 \begin{frame}[fragile]{\hologo{XeTeX}}
-    \shellinputbox{Avec l'outil \hologo{XeLaTeX}}{examples/session-xelatex.session}
+    Il existe beaucoup d'outils en ligne de commande, \hologo{XeLaTeX} est le
+    plus conseillé aujourd'hui.
 
-    Une meilleur gestion de l'unicode et des polices modernes.
+    \shellinputbox{Compilation avec \hologo{XeLaTeX}}{examples/session-xelatex.session}
+
+    \hologo{pdfLaTeX} est aussi très utilisé mais gère moins bien les accents et
+    les polices modernes.
 \end{frame}
 
 \section{Fonctionnalités du langage}
 \subsection{Configuration globale du document}
 \begin{frame}[fragile]{Les classes de document}
-    La classe d'un document est définiée par la commande:
+    La classe d'un document est définie par la commande:
 
     \texinputbox{}{examples/documentclass-struct.tex}
 
@@ -312,15 +310,6 @@
     "\texttt{autolanguage}" (\texinline{\usepackage[autolanguage]{numprint}}).
 \end{frame}
 
-\begin{frame}[fragile]{Écrire en français dans le fichier source}
-    Pour pouvoir écrire directement \texinline{é} au lieu de \texinline{\'e} (et
-    bien d'autres):
-
-    \texinputbox{}{examples/typo-fr-enc.tex}
-
-    Ou bien utiliser \hologo{XeLaTeX} au lieu de \hologo{pdfLaTeX}.
-\end{frame}
-
 \subsection{Table des matières}
 \begin{frame}[fragile]{Exemple de ToC}
     \center
@@ -342,11 +331,6 @@
 \begin{frame}[fragile]{latexmk}
     \shellinputbox{Le plus simple est d'utiliser latexmk}
                   {examples/session-toc-latexmk.session}
-\end{frame}
-
-\begin{frame}[fragile]{latexmk et \hologo{XeLaTeX}}
-    \shellinputbox{La même chose avec \hologo{XeLaTeX}}
-                  {examples/session-latexmk-xelatex.session}
 \end{frame}
 
 \section{Présentation de données}
@@ -404,8 +388,8 @@
         \item[WYSIWYG\footnote{What You See Is What You Get}:] pas un vrai
             argument (les suites *Office ne le sont pas vraiment et il existe
             des éditeurs \LaTeX{} WYSIWYG).
-        \item[Courbe d'apprentissage:] apprendre à utiliser correctement \LaTeX
-            est long et souvent frustrant.
+        \item[Courbe d'apprentissage:] apprendre à utiliser correctement
+            \LaTeX{} est long et souvent frustrant.
     \end{description}
 \end{frame}
 
