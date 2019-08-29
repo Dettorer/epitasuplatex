@@ -5,10 +5,12 @@ article.tex
 No file article.toc.
 […]
 [dettorer@ringil]$ ls
-article.aux  article.log  article.pdf  article.tex  article.toc
+article.aux  article.log  article.pdf  article.tex
+article.toc
 [dettorer@ringil]$ xelatex article.tex
 […]
 (./article.toc)
 […]
 [dettorer@ringil]$ ls
-article.aux  article.log  article.pdf  article.tex  article.toc
+article.aux  article.log  article.pdf  article.tex
+article.toc
