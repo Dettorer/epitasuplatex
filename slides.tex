@@ -42,12 +42,25 @@
     }
 }
 \usemintedstyle[latex]{autumn}
+\newmintedfile[textinput]{text}{
+    numbersep=2mm, % by default line numbers are too far on the left and leave the color box, make them closer
+    fontsize=\footnotesize, % make the code smaller
+    breaklines=true % break lines if they are too long
+}
+\newcommand{\textinputbox}[2]{
+    % Display latex code through minted inside a color box
+    \begin{tcolorbox}[title=#1,colframe=PineGreen]
+        \selectlanguage{english}
+        \textinput{#2}
+    \end{tcolorbox}
+}
 \newmintedfile[texinput]{latex}{ % Shorthand for displaying latex code from file
     linenos, % display line numbers
     numbersep=2mm, % by default line numbers are too far on the left and leave the color box, make them closer
     fontsize=\footnotesize, % make the code smaller
     breaklines=true % break lines if they are too long
 }
+\newmintinline[textinline]{text}{bgcolor=lightlightgray} % Shorthand for \mintinline{latex}{…}
 \newcommand{\texinputbox}[2]{
     % Display latex code through minted inside a color box
     \begin{tcolorbox}[title=#1,colframe=PineGreen]
@@ -143,6 +156,12 @@
 
 \section{Principes fondamentaux}
 \subsection{Le langage}
+\begin{frame}[fragile]{Organisation de la source d'un document \LaTeX}
+    \textinputbox{article.tex}{examples/article-skeleton.tex}
+
+    Anatomie d'une commande : \textinline{\nom[options]{arguments}}
+\end{frame}
+
 \begin{frame}[fragile]{Organisation de la source d'un document \LaTeX}
     \texinputbox{article.tex}{examples/article-skeleton.tex}
 
