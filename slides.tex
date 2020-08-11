@@ -1,17 +1,14 @@
 \documentclass[usenames,dvipsnames,10pt]{beamer} % beamer is the document class for presentation slides
 
 % needed for some examples
-\usepackage[french]{babel}
-\usepackage[autolanguage]{numprint}
 \usepackage{amsmath} % even more advanced math
 \usepackage{esint} % more integral (math) symbols
 
 % languages typesetting rules
-\usepackage{polyglossia} % handle multiple languages typesetting rules
-\setdefaultlanguage{french} % this presentation is in french
-\setotherlanguages{english,greek} % this presentation sometimes uses english and greek texts
-\newfontfamily\greekfont[Script=Greek]{Linux Libertine O} % we need a special font for greek text
-\newfontfamily\greekfontsf[Script=Greek]{Linux Libertine O} % same, but sans serif
+\usepackage[english,french]{babel}
+\babeltags{english = english}
+
+\usepackage[autolanguage]{numprint}
 
 % links configuration
 \usepackage{hyperref} % commands such as \href, \url, etc.
@@ -258,8 +255,8 @@
         \texinline{\usepackage[utf8]{inputenc}}).
     \end{itemize}
 
-    Il est aussi possible de gérer plusieurs langages dans un même document et
-    de passer de l'un à l'autre avec des commandes (voir aussi
+    Babel sait aussi gérer plusieurs langues dans un même document et permet de
+    passer de l'un à l'autre avec des commandes (voir aussi
     \texinline{\usepackage{polyglossia}}).
 \end{frame}
 
@@ -270,9 +267,21 @@
 \end{frame}
 
 \begin{frame}[fragile]{Exemple de typographie française\cite{imprimerie2002lexique}}
+    % this comment introduces a vertical space that perfectly aligns this frame with the next one
     \texexample{examples/typo-examples-fr.tex}
                {exemple.tex}{exemple.pdf}
                {0.57\textwidth}{0.55\textwidth}
+
+    Note: \texinline{\nombre} vient du paquet "\texttt{numprint}" avec l'option
+    "\texttt{autolanguage}" (\texinline{\usepackage[autolanguage]{numprint}}).
+\end{frame}
+
+\begin{frame}[fragile]{La même chose avec les convention anglaise !}
+    \begin{english}
+        \texexample{examples/typo-examples-fr.tex}
+                   {exemple.tex}{exemple.pdf}
+                   {0.57\textwidth}{0.55\textwidth}
+    \end{english}
 
     Note: \texinline{\nombre} vient du paquet "\texttt{numprint}" avec l'option
     "\texttt{autolanguage}" (\texinline{\usepackage[autolanguage]{numprint}}).
@@ -353,7 +362,7 @@
 \subsection{\TeX}
 \begin{frame}{\TeX}
     \begin{description}
-        \item[Nom :] symbolise les lettres \textgreek{τεχ}, abbréviation de \textgreek{τέχνη}
+        \item[Nom :] symbolise les lettres \foreignlanguage{greek}{τεχ}, abbréviation de \foreignlanguage{greek}{τέχνη}
         \item[Objectif :] mise en forme typographique entièrement informatique
         \item[Création :] Donald Knuth, 1977-1989
         \item[Prononciation :] \ipa{[tEx]}
